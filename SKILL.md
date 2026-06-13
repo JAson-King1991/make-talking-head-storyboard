@@ -126,24 +126,67 @@ Avoid:
 
 Begin with a compact `全文理解摘要` containing the core thesis, argument path, emotional direction, protagonist-use strategy, and visual style assumptions. Keep it concise.
 
-Then output this Markdown execution table:
+Do not put every field into one wide Markdown table. Never use a default execution table with more than 6 columns, and never place long AI-video prompts inside a table cell. Use the following layered format.
 
-| 原句或语义概括 | 上下文含义 | B-roll 建议强度 | 是否建议加 B-roll | B-roll 类型 | 是否使用 AI 动画主人公 | 主人公扮演角色 | 主人公动作与表演要求 | 插入位置 | B-roll 画面建议 | 镜头用途 | 推荐时长 | 节奏建议 | 素材来源建议 | 素材库检索关键词 | 即梦中文 prompt | 是否更适合保留人物正面及原因 | 备注 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+### 1. 分镜总览表
+
+Use one compact table for editing decisions:
+
+| 编号 | 原句或语义概括 | B-roll 决策 | 插入位置与时长 | 画面方案与用途 | 制作方式 |
+|---|---|---|---|---|---|
 
 Rules:
 
-- Keep `素材库检索关键词` and `即梦中文 prompt` in separate columns.
-- Use `是 / 可选 / 否` for B-roll and protagonist decisions.
-- Use B-roll types such as `主人公情景演绎 / 场景复现 / 环境物体 / 流程演示 / 数据图形 / 现有素材 / 保留人物正面`.
-- Make `插入位置` executable, such as `说到“成本翻倍”后切入，持续至句尾`.
-- State full-screen, half-screen, overlay, over-shoulder, data graphic, or shot group when relevant.
-- Give a concrete placement duration, normally 2-6 seconds. AI-generated source clips may be 5-10 seconds and trimmed during editing.
-- Use `AI 生成 / 素材库 / 实拍 / 动效图形 / 现有品牌素材` or a useful combination.
-- Use `不建议生成` when no AI-generated B-roll is recommended.
-- Keep assumptions and uncertainty in `备注`.
+- Combine suitability and strength in `B-roll 决策`, such as `是·强 / 是·中 / 可选·弱 / 否·无`.
+- Make `插入位置与时长` executable, such as `说到“成本翻倍”后切入，持续至句尾，约4秒`.
+- Keep `画面方案与用途` concise: state what viewers see and what the shot communicates.
+- Combine B-roll type and source in `制作方式`, such as `流程演示｜动效图形` or `主人公情景演绎｜AI生成`.
+- Put protagonist roles and performance details in the corresponding generation card.
+- Put speaker-on-camera reasons in `人物正面关键保留点`, not in the overview table.
+- State full-screen, half-screen, overlay, over-shoulder, data graphic, or shot group where relevant.
 
-After the table, add:
+### 2. AI 视频生成卡片
+
+After the overview, create one vertically readable card for every shot recommended for AI generation. Do not use a table for these cards.
+
+Use this structure:
+
+````markdown
+### B01｜镜头名称
+
+- **对应原句：** ...
+- **上下文含义：** ...
+- **画面方案：** ...
+- **主人公角色：** 不使用 / 角色与身份
+- **动作与表演：** ...
+- **剪辑使用：** 插入位置、成片使用时长、节奏
+- **素材库检索关键词：** ...
+- **生成建议：** 即梦 / 可灵；建议源片时长
+
+**即梦中文 Prompt**
+
+```text
+完整中文 Prompt
+```
+
+**备注：** 连贯性、准确性或生成风险
+````
+
+- Keep `素材库检索关键词` and `即梦中文 Prompt` as separate fields.
+- Number cards consistently with the overview table.
+- If AI generation is not recommended, do not create a generation card.
+
+### 3. 非 AI 素材与动效清单
+
+Use a separate compact table for official screenshots, verified data graphics, stock footage, real footage, or existing brand material:
+
+| 编号 | 对应内容 | 素材形式 | 获取或制作建议 | 准确性要求 |
+|---|---|---|---|---|
+
+- Put exact statistics, legal documents, official cases, logos, and readable interface text here instead of asking an AI-video model to generate them.
+- Use `不建议 AI 生成` where generation could create factual or textual errors.
+
+After these sections, add:
 
 - `预计 B-roll 覆盖率`
 - `人物正面关键保留点`
