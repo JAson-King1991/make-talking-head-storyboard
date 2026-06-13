@@ -126,67 +126,31 @@ Avoid:
 
 Begin with a compact `全文理解摘要` containing the core thesis, argument path, emotional direction, protagonist-use strategy, and visual style assumptions. Keep it concise.
 
-Do not put every field into one wide Markdown table. Never use a default execution table with more than 6 columns, and never place long AI-video prompts inside a table cell. Use the following layered format.
+Then output one complete Markdown execution table using exactly these columns:
 
-### 1. 分镜总览表
+| 原句或语义概括 | B-roll 建议强度 | 是否建议加 B-roll | 插入位置 | B-roll 画面建议 | 镜头用途 | 推荐时长 | 节奏建议 | 素材来源建议 | 素材库检索关键词 | 即梦中文 prompt | 是否更适合保留人物正面及原因 | 备注 |
+|---|---|---|---|---|---|---:|---|---|---|---|---|---|
 
-Use one compact table for editing decisions:
+Execution-table rules:
 
-| 编号 | 原句或语义概括 | B-roll 决策 | 插入位置与时长 | 画面方案与用途 | 制作方式 |
-|---|---|---|---|---|---|
+- Use `强烈建议 / 一般建议 / 不建议` for `B-roll 建议强度`.
+- Use `是 / 可加 / 否` for `是否建议加 B-roll`.
+- Keep one visual decision per row. Split long passages when insertion timing, visual purpose, or treatment changes.
+- Make `插入位置` directly executable, such as `开头第1秒后切入，人物出场1秒建立信任后切`.
+- Describe the actual visible shot in `B-roll 画面建议`; do not write abstract creative language.
+- Use `镜头用途` to state the communication job, such as `解释银行决策逻辑` or `强化风险识别`.
+- Give the intended edited duration in `推荐时长`, normally `2-10秒`.
+- Use `节奏建议` to specify returns to the speaker, short cuts, continuous B-roll sections, overlays, half-screen graphics, or deliberate pauses.
+- Use `AI生成 / 现成素材 / 可购买素材 / 后期图形 / 实拍 / 官方材料` or useful combinations in `素材来源建议`.
+- Keep `素材库检索关键词` and `即梦中文 prompt` as separate columns.
+- Include useful Chinese and optional English stock-search terms in `素材库检索关键词`.
+- Write a complete Chinese AI-video prompt only when AI generation is appropriate. Otherwise write `—`.
+- Every generated prompt must default to `方形画面1:1` and `5-10秒`, even if a supplied example uses another aspect ratio.
+- Use `是否更适合保留人物正面及原因` to explicitly decide whether the speaker should remain visible and why.
+- Put factual accuracy, legal or brand risks, continuity constraints, and generation warnings in `备注`.
+- For exact statistics, legal documents, official cases, logos, readable interfaces, or contact details, prefer official material or post-production graphics and state `不建议AI生成`.
 
-Rules:
-
-- Combine suitability and strength in `B-roll 决策`, such as `是·强 / 是·中 / 可选·弱 / 否·无`.
-- Make `插入位置与时长` executable, such as `说到“成本翻倍”后切入，持续至句尾，约4秒`.
-- Keep `画面方案与用途` concise: state what viewers see and what the shot communicates.
-- Combine B-roll type and source in `制作方式`, such as `流程演示｜动效图形` or `主人公情景演绎｜AI生成`.
-- Put protagonist roles and performance details in the corresponding generation card.
-- Put speaker-on-camera reasons in `人物正面关键保留点`, not in the overview table.
-- State full-screen, half-screen, overlay, over-shoulder, data graphic, or shot group where relevant.
-
-### 2. AI 视频生成卡片
-
-After the overview, create one vertically readable card for every shot recommended for AI generation. Do not use a table for these cards.
-
-Use this structure:
-
-````markdown
-### B01｜镜头名称
-
-- **对应原句：** ...
-- **上下文含义：** ...
-- **画面方案：** ...
-- **主人公角色：** 不使用 / 角色与身份
-- **动作与表演：** ...
-- **剪辑使用：** 插入位置、成片使用时长、节奏
-- **素材库检索关键词：** ...
-- **生成建议：** 即梦 / 可灵；建议源片时长
-
-**即梦中文 Prompt**
-
-```text
-完整中文 Prompt
-```
-
-**备注：** 连贯性、准确性或生成风险
-````
-
-- Keep `素材库检索关键词` and `即梦中文 Prompt` as separate fields.
-- Number cards consistently with the overview table.
-- If AI generation is not recommended, do not create a generation card.
-
-### 3. 非 AI 素材与动效清单
-
-Use a separate compact table for official screenshots, verified data graphics, stock footage, real footage, or existing brand material:
-
-| 编号 | 对应内容 | 素材形式 | 获取或制作建议 | 准确性要求 |
-|---|---|---|---|---|
-
-- Put exact statistics, legal documents, official cases, logos, and readable interface text here instead of asking an AI-video model to generate them.
-- Use `不建议 AI 生成` where generation could create factual or textual errors.
-
-After these sections, add:
+After the execution table, add:
 
 - `预计 B-roll 覆盖率`
 - `人物正面关键保留点`
