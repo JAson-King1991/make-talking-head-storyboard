@@ -64,7 +64,9 @@ Use strength labels:
 - `弱`: Optional short insert, overlay, or keyword visualization.
 - `无`: Keep the speaker face.
 
-Target B-roll coverage above 50% by default, normally 55%-65%. Do not achieve this through one-sentence-one-cut editing. Use full-screen shots, half-screen or overlay, over-shoulder material, short shot groups, data graphics, and deliberate returns to the speaker.
+Target **full-screen B-roll coverage of at least 60%** by default. Full-screen B-roll means the speaker face is completely replaced by AI-generated video, stock or real footage, full-screen data graphics, or full-screen official material. Do not count half-screen visuals, overlays, subtitles, keyword graphics, or graphics placed behind the visible speaker toward this 60% target.
+
+Calculate coverage from the edited placement durations, not the generated source-clip durations. If the first plan is below 60%, revise shot placement and extend useful full-screen visual sequences before returning the answer. Do not reach the target with decorative filler or one-sentence-one-cut editing. Preserve the speaker face for trust, thesis, transitions, warnings, and conclusions; use longer coherent full-screen sequences, short shot groups, process graphics, evidence, and scene reconstruction elsewhere.
 
 ## AI Animated Protagonist
 
@@ -141,6 +143,7 @@ Execution-table rules:
 - Use `镜头用途` to state the communication job, such as `解释银行决策逻辑` or `强化风险识别`.
 - Give the intended edited duration in `推荐时长`, normally `2-10秒`.
 - Use `节奏建议` to specify returns to the speaker, short cuts, continuous B-roll sections, overlays, half-screen graphics, or deliberate pauses.
+- Explicitly state `全屏 B-roll / 半屏 / 叠加 / 人物正面` in `节奏建议` so full-screen coverage can be audited.
 - Use `AI生成 / 现成素材 / 可购买素材 / 后期图形 / 实拍 / 官方材料` or useful combinations in `素材来源建议`.
 - Keep `素材库检索关键词` and `即梦中文 prompt` as separate columns.
 - Include useful Chinese and optional English stock-search terms in `素材库检索关键词`.
@@ -152,11 +155,25 @@ Execution-table rules:
 
 After the execution table, add:
 
-- `预计 B-roll 覆盖率`
+- `全屏 B-roll 覆盖率核算`
 - `人物正面关键保留点`
 - `主人公重点演绎清单`
 - `优先生成清单`: rank the 3-8 AI clips with the highest communication value
 - `制作风险`: only meaningful contextual, continuity, or generation risks
+
+Use this coverage audit table:
+
+| 核算项目 | 预计时长 | 是否计入全屏 B-roll |
+|---|---:|---|
+| 成片总时长 | ... | — |
+| 全屏 AI 视频、素材、信息图与官方材料 | ... | 是 |
+| 半屏、叠加与人物同屏图形 | ... | 否 |
+| 人物正面 | ... | 否 |
+| 全屏 B-roll 覆盖率 | `全屏 B-roll 时长 ÷ 成片总时长` | 必须不低于60% |
+
+- Avoid double-counting overlapping visuals.
+- Label timing as estimated when the source has no timestamps.
+- Report both the estimated duration and calculation. Do not state an unsupported percentage.
 
 ## AI Video Prompt Rules
 
