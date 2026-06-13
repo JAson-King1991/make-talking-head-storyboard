@@ -1,0 +1,4 @@
+interface:
+  display_name: "口播视频分镜执行助手"
+  short_description: "理解全文并生成可执行的 B-roll 分镜与上下文视频 Prompt"
+  default_prompt: "使用 $make-talking-head-storyboard 理解这份口播稿，判断适合的 B-roll，并生成包含 AI 动画主人公演绎方案的中文视频 Prompt。"
