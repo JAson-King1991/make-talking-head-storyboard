@@ -1,6 +1,6 @@
 ---
 name: make-talking-head-storyboard
-description: Turn Chinese talking-head scripts, transcripts, themes, video descriptions, or finished-video link descriptions into production-ready B-roll storyboard execution sheets and context-grounded Chinese AI-video prompts. Use for knowledge explainers, founder or executive IP videos, brand promotion, oral-script shot planning, deciding which lines need B-roll, selecting when a recurring AI animated protagonist should perform a scene, and preparing prompts for Jimeng or Kling before optional video generation.
+description: Turn Chinese talking-head scripts, transcripts, themes, video descriptions, or finished-video link descriptions into downloadable production-ready B-roll storyboard workbooks and context-grounded Chinese AI-video prompts. Use for knowledge explainers, founder or executive IP videos, brand promotion, oral-script shot planning, deciding which lines need B-roll, selecting when a recurring AI animated protagonist should perform a scene, and preparing prompts for Jimeng or Kling before optional video generation.
 ---
 
 # Make Talking Head Storyboard
@@ -34,7 +34,7 @@ Follow these stages in order. Do not jump directly from an isolated sentence to 
    - Write a Chinese prompt optimized for a controllable 5-10 second clip.
 8. **Check generation feasibility**
    - Simplify actions, cast, props, and camera movement when the model is likely to fail.
-9. **Build the execution sheet and coverage summary**
+9. **Build and verify the downloadable Excel execution workbook**
 10. **Optional generation**
    - Only after explicit user instruction, consider a direct B-roll-to-AI-animation skill or Kling integration.
 
@@ -128,7 +128,11 @@ Avoid:
 
 Begin with a compact `全文理解摘要` containing the core thesis, argument path, emotional direction, protagonist-use strategy, and visual style assumptions. Keep it concise.
 
-Then output one complete Markdown execution table using exactly these columns:
+Create a downloadable `.xlsx` workbook by default. Do not print the full execution table in chat unless the user explicitly asks for an inline table or the environment cannot create spreadsheet files.
+
+Follow [references/workbook-output-spec.md](references/workbook-output-spec.md) when building and verifying the workbook.
+
+The `分镜执行表` worksheet must use exactly these columns:
 
 | 原句或语义概括 | B-roll 建议强度 | 是否建议加 B-roll | 插入位置 | B-roll 画面建议 | 镜头用途 | 推荐时长 | 节奏建议 | 素材来源建议 | 素材库检索关键词 | 即梦中文 prompt | 是否更适合保留人物正面及原因 | 备注 |
 |---|---|---|---|---|---|---:|---|---|---|---|---|---|
@@ -153,7 +157,7 @@ Execution-table rules:
 - Put factual accuracy, legal or brand risks, continuity constraints, and generation warnings in `备注`.
 - For exact statistics, legal documents, official cases, logos, readable interfaces, or contact details, prefer official material or post-production graphics and state `不建议AI生成`.
 
-After the execution table, add:
+Include these additional workbook sections:
 
 - `全屏 B-roll 覆盖率核算`
 - `人物正面关键保留点`
@@ -174,6 +178,14 @@ Use this coverage audit table:
 - Avoid double-counting overlapping visuals.
 - Label timing as estimated when the source has no timestamps.
 - Report both the estimated duration and calculation. Do not state an unsupported percentage.
+
+In the chat response, return only:
+
+- A short completion summary.
+- The calculated full-screen B-roll coverage.
+- A downloadable link to the final `.xlsx` file.
+
+If spreadsheet creation is unavailable, use the same sections and columns in Markdown as a fallback and state that no downloadable workbook could be generated.
 
 ## AI Video Prompt Rules
 

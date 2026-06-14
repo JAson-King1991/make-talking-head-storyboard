@@ -15,6 +15,8 @@
 
 它不会机械地为每句话配画面。重要观点、情绪落点和需要建立信任的内容会保留人物正面，B-roll 只会出现在真正有助于理解、节奏或情绪表达的位置。
 
+默认交付一个可下载的 Excel 执行工作簿，包含分镜执行表、独立 AI 视频提示词、全屏 B-roll 覆盖率核算和制作清单，方便直接交给剪辑与 AI 视频制作人员使用。
+
 ## 1. 从口播文案到 AI 视频素材
 
 针对每个建议加入的 B-roll，Skill 会提供：
@@ -62,6 +64,8 @@ When producing a talking-head video, do you often face questions like these?
 This skill analyzes the complete script, identifies which parts should be visualized, and organizes them into an executable B-roll storyboard.
 
 It does not mechanically add visuals to every sentence. Important arguments, emotional conclusions, and trust-building moments remain on camera. B-roll is recommended only where it improves understanding, pacing, or emotional expression.
+
+By default, it delivers a downloadable Excel production workbook containing the storyboard execution sheet, separate AI-video prompts, a full-screen B-roll coverage audit, and a production checklist.
 
 ### 2. From Talking-head Script to AI-generated Footage
 
